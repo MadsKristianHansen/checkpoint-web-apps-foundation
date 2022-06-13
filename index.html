@@ -67,6 +67,7 @@
         const lengthDisplay = document.querySelector("#length-display");
 
         inputBtn.addEventListener("click", togglePwVisibility);
+        wrapper.addEventListener("input", updateOutput);
 
         function togglePwVisibility() {
             if (input1.type === "password" && input2.type === "password") {
@@ -77,6 +78,26 @@
                 input1.type = "password";
                 input2.type = "password";
                 inputBtn.innerText = "Show Password";
+            }
+        }
+
+        function checkPwEquality() {
+            if (input1.value === input2.value && input1.value.length > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function updateOutput() {
+            if (checkPwEquality()) {
+                equalDisplay.innerText = "✅";
+            } else {
+                equalDisplay.innerText = "❌";
+                lowerCaseDisplay.innerText = "❌";
+                upperCaseDisplay.innerText = "❌";
+                containsNumberDisplay.innerText = "❌";
+                lengthDisplay.innerText = "❌";
             }
         }
 
