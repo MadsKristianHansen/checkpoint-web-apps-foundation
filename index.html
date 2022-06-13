@@ -92,12 +92,43 @@
         function updateOutput() {
             if (checkPwEquality()) {
                 equalDisplay.innerText = "✅";
+                checkPwCharacters();
             } else {
                 equalDisplay.innerText = "❌";
                 lowerCaseDisplay.innerText = "❌";
                 upperCaseDisplay.innerText = "❌";
                 containsNumberDisplay.innerText = "❌";
                 lengthDisplay.innerText = "❌";
+            }
+        }
+
+        function checkPwCharacters() {
+            updateLowerCaseDisplay();
+        }
+
+        function updateLowerCaseDisplay() {
+            if (checkLowerCase()) {
+                lowerCaseDisplay.innerText = "✅";
+            } else {
+                lowerCaseDisplay.innerText = "❌";
+            }
+        }
+
+        function checkLowerCase() {
+            const password = input1.value;
+            let positive;
+
+            for (i = 0; i < password.length; i++) {
+                let letter = password[i];
+                if (letter.toLowerCase() === letter && isNaN(letter)) {
+                    if (positive === undefined) {
+                        positive = true;
+                    }
+                    return true;
+
+                } else if (positive !== undefined) {
+                    return false;
+                }
             }
         }
 
