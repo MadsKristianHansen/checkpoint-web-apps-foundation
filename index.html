@@ -55,6 +55,30 @@
     </main>
 
     <script>
+        const wrapper = document.querySelector("#user-input");
+        const input1 = document.querySelector("#input1");
+        const input2 = document.querySelector("#input2");
+        const inputBtn = document.querySelector("#inputBtn");
+
+        const equalDisplay = document.querySelector("#equal-display");
+        const lowerCaseDisplay = document.querySelector("#lowercase-display");
+        const upperCaseDisplay = document.querySelector("#uppercase-display");
+        const containsNumberDisplay = document.querySelector("#contains-numbers-display");
+        const lengthDisplay = document.querySelector("#length-display");
+
+        inputBtn.addEventListener("click", togglePwVisibility);
+
+        function togglePwVisibility() {
+            if (input1.type === "password" && input2.type === "password") {
+                input1.type = "text";
+                input2.type = "text";
+                inputBtn.innerText = "Hide Password";
+            } else {
+                input1.type = "password";
+                input2.type = "password";
+                inputBtn.innerText = "Show Password";
+            }
+        }
 
     </script>
 </body>
