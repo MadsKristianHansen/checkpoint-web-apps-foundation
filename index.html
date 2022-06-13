@@ -104,6 +104,7 @@
 
         function checkPwCharacters() {
             updateLowerCaseDisplay();
+            updateUpperCaseDisplay();
         }
 
         function updateLowerCaseDisplay() {
@@ -121,6 +122,32 @@
             for (i = 0; i < password.length; i++) {
                 let letter = password[i];
                 if (letter.toLowerCase() === letter && isNaN(letter)) {
+                    if (positive === undefined) {
+                        positive = true;
+                    }
+                    return true;
+
+                } else if (positive !== undefined) {
+                    return false;
+                }
+            }
+        }
+
+        function updateUpperCaseDisplay() {
+            if (checkUpperCase()) {
+                upperCaseDisplay.innerText = "✅";
+            } else {
+                upperCaseDisplay.innerText = "❌";
+            }
+        }
+
+        function checkUpperCase() {
+            const password = input1.value;
+            let positive;
+
+            for (i = 0; i < password.length; i++) {
+                let letter = password[i];
+                if (letter.toUpperCase() === letter && isNaN(letter)) {
                     if (positive === undefined) {
                         positive = true;
                     }
