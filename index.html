@@ -105,6 +105,7 @@
         function checkPwCharacters() {
             updateLowerCaseDisplay();
             updateUpperCaseDisplay();
+            updateContainsNumberDisplay();
         }
 
         function updateLowerCaseDisplay() {
@@ -157,6 +158,19 @@
                     return false;
                 }
             }
+        }
+
+        function updateContainsNumberDisplay() {
+            const password = input1.value;
+            if (checkContainsNumber(password)) {
+                containsNumberDisplay.innerText = "✅";
+            } else {
+                containsNumberDisplay.innerText = "❌";
+            }
+        }
+
+        function checkContainsNumber(password) {
+            return /\d/.test(password);
         }
 
     </script>
