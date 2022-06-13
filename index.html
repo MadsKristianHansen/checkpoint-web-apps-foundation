@@ -106,6 +106,7 @@
             updateLowerCaseDisplay();
             updateUpperCaseDisplay();
             updateContainsNumberDisplay();
+            updateLengthDisplay();
         }
 
         function updateLowerCaseDisplay() {
@@ -173,6 +174,22 @@
             return /\d/.test(password);
         }
 
+        function updateLengthDisplay() {
+            if (checkLength()) {
+                lengthDisplay.innerText = "✅";
+            } else {
+                lengthDisplay.innerText = "❌";
+            }
+        }
+
+        function checkLength() {
+            const password = input1.value;
+            if (input1.value.length >= 10) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     </script>
 </body>
 
