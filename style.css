@@ -1,0 +1,88 @@
+/* General Stylings */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+body {
+  margin: 0;
+  background-color: lightsalmon;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lobster", cursive;
+  color: white;
+}
+
+h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px black;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+input,
+button {
+  font-family: "Open Sans", sans-serif;
+  border-radius: 2px;
+  border: 2px solid black;
+  width: 100%;
+}
+
+/* Specific Stylings */
+
+.input-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+#user-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#inputBtn {
+  background-color: black;
+  color: white;
+}
+
+.check-output {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 700px) {
+  main {
+    flex-direction: row;
+    gap: 5rem;
+  }
+}
